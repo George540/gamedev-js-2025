@@ -521,6 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 746559d0d5fa90b4490228d89ed84417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _oceanManager: {fileID: 2104505695}
   _rigidbody: {fileID: 879400280}
   _objectFloaters:
   - {fileID: 72294666}
@@ -532,7 +533,6 @@ MonoBehaviour:
   _airLinearWaterDrag: 0
   _airAngularWaterDrag: 0.05
   _floatingPower: 100
-  _waterHeight: 0
 --- !u!54 &879400280
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -726,6 +726,7 @@ GameObject:
   - component: {fileID: 2104505694}
   - component: {fileID: 2104505693}
   - component: {fileID: 2104505692}
+  - component: {fileID: 2104505695}
   m_Layer: 0
   m_Name: WaterPlane
   m_TagString: Untagged
@@ -801,6 +802,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2104505695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104505691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abdac6e37e502fe4c8afa991d2d200d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _oceanMaterial: {fileID: 2100000, guid: f8d6379889c3d1441b0afb355fe6c165, type: 2}
+  _displacementWavesTexture: {fileID: 2800000, guid: 19e66e2eb38719048be26475b04bea0e, type: 3}
+  _waveHeight: 7
+  _waveFrequency: 1
+  _waveSpeed: 0.01
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

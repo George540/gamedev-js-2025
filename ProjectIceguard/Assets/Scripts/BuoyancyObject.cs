@@ -3,6 +3,7 @@ using UnityEngine.Serialization;
 
 public class BuoyancyObject : MonoBehaviour
 {
+    [SerializeField] private OceanManager _oceanManager;
     [SerializeField] private Rigidbody _rigidbody;
     
     [SerializeField] private Transform[] _objectFloaters;
@@ -14,7 +15,6 @@ public class BuoyancyObject : MonoBehaviour
     [SerializeField] private float _airAngularWaterDrag = 0.05f;
     
     [SerializeField] private float _floatingPower = 15.0f;
-    [SerializeField] private float _waterHeight = 0.0f;
 
     private bool _bIsUnderWater;
     private int _floatersUnderWaterNum;
@@ -30,7 +30,7 @@ public class BuoyancyObject : MonoBehaviour
     {
         foreach (var floater in _objectFloaters)
         {
-            float difference = floater.position.y - _waterHeight;
+            float difference = floater.position.y - _oceanManager.GetWaterHeightAtPosition(floater.position);
 
             if (difference < 0)
             {
